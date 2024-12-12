@@ -79,10 +79,6 @@ body {
 	flex-direction: column;
 	gap: 20px;
 }
-.login h2 {
-	font-size: 2em;
-	color: #fff;
-}
 .login .inputBx {
 	position: relative;
 	width: 100%;
