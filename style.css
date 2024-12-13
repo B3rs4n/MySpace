@@ -35,8 +35,8 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    color: var(--color-dark);
-    background: var(--color-light);
+    color: white;
+    background: black;
     overflow-x: hidden;
 }
 
@@ -44,6 +44,10 @@ body {
 .container {
     width: 80%;
     margin: 0 auto;
+}
+
+.profile {
+margin-top: 10rem;    
 }
 
 .profile-photo {
@@ -56,6 +60,17 @@ body {
 img {
     display: block;
     width: 100%;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    border-radius: 50%;
+}
+
+.logo img {
+    border-radius: 50%;
 }
 
 .btn {
@@ -74,7 +89,7 @@ img {
 
 .btn-primary {
     background: var(--color-primary);
-    color: var(--color-white);
+    color: white;
 }
 
 .text-bold {
@@ -83,23 +98,6 @@ img {
 
 .text-muted {
     color: var(--color-grey);
-}
-
-/* =============== Navbar ============== */
-nav {
-    width: 100%;
-    background: var(--color-white);
-    padding: 0.7rem 0;
-    position: fixed;
-    top: 0;
-    z-index: 10;
-}
-
-nav .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
 }
 
 .search-bar {
@@ -120,16 +118,9 @@ nav .search-bar input[type="search"]::placeholder {
     color: var(--color-grey);
 }
 
-nav .create {
-    display: flex;
-    align-items: center;
-    gap: 2rem;
-}
-
 /* =============== Main ============== */
 main {
     position: relative;
-    top: 5.4rem;
 }
 
 main .container {
@@ -148,7 +139,7 @@ main .container .left {
 
 main .container .left .profile {
     padding: var(--card-padding);
-    background: var(--color-white);
+    background: black;
     border-radius: var(--card-border-radius);
     display: flex;
     align-items: center;
@@ -159,7 +150,7 @@ main .container .left .profile {
 /* =============== Sidebar ============== */
 .left .sidebar {
     margin-top: 1rem;
-    background: var(--color-white);
+    background: black;
     border-radius: var(--card-border-radius);
 }
 
@@ -173,7 +164,7 @@ main .container .left .profile {
 }
 
 .left .sidebar .menu-item:hover {
-    background: var(--color-light);
+    background: #181818;
 }
 
 .left .sidebar i {
@@ -198,10 +189,6 @@ main .container .left .profile {
 .left .sidebar h3 {
     margin-left: 1.5rem;
     font-size: 1rem;
-}
-
-.left .sidebar .active {
-    background: var(--color-light);
 }
 
 .left .sidebar .active i, 
@@ -280,7 +267,7 @@ main .container .left .profile {
     align-items: center;
     justify-content: space-between;
     margin-top: 1rem;
-    background: var(--color-white);
+    background: #181818;
     padding: 0.4rem var(--card-padding);
     border-radius: var(--border-radius);
 }
@@ -290,13 +277,13 @@ main .container .left .profile {
     justify-self: start;
     padding-left: 1rem;
     background: transparent;
-    color: var(--color-dark);
+    color: white;
     margin-right: 1rem;
 }
 
 /* =============== Feeds ============== */
 .middle .feeds .feed {
-    background: var(--color-white);
+    background: #181818;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
     margin: 1rem 0;
@@ -369,7 +356,7 @@ main .container .right {
 }
 
 .right .request {
-    background: var(--color-white);
+    background: #181818;
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
@@ -405,6 +392,15 @@ MEDIA QUERIES FOR SMALL LAPTOP AND BIG TABLETS
     main .container {
         grid-template-columns: 5rem auto 30vw;
         gap: 1rem;
+    }
+
+    .logo {
+        position: var(--sticky-top-right);
+        border-radius: 50%;
+    }
+
+    .logo img {
+        border-radius: 50%;
     }
 
     .left {
