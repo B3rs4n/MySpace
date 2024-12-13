@@ -101,9 +101,14 @@ img {
 }
 
 .search-bar {
-    background: var(--color-light);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1rem;
+    background: #9a6ef349;
+    padding: 0.4rem var(--card-padding);
     border-radius: var(--border-radius);
-    padding: var(--search-padding);
 }
 
 .search-bar input[type="search"] {
@@ -345,32 +350,36 @@ main .container .right {
     bottom: 0;
 }
 
-/* =============== Friend Requests ============== */
-.right .friend-requests {
+/* =============== WHO TO FOLLOW ============== */
+.right .who-to-follow {
     margin-top: 1rem;
 }
 
-.right .friend-requests h4 {
+.right .who-to-follow h4 {
     color: var(--color-grey);
     margin: 1rem 0;
 }
 
-.right .request {
+.right .follow {
     background: #181818;
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
 }
 
-.right .request .info {
+.right .follow .info {
     display: flex;
     gap: 1rem;
     margin-bottom: 1rem;
 }
 
-.right .request .action {
+.right .follow .action {
     display: flex;
     gap: 1rem;
+}
+
+.right .follow .action .btn {
+    width: 100%;
 }
 
 footer {
