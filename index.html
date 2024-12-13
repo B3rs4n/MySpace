@@ -28,11 +28,11 @@
                     </a>
                     <a class="menu-item">
                         <span><i class="uil uil-compass"></i></span>
-                        <h3>Explore</h3>
+                        <h3>Starfall</h3>
                     </a>
                     <a class="menu-item"  id="notifications">
                         <span><i class="uil uil-bell"><small class="notification-count">9+</small></i></span>
-                        <h3>Notification</h3>
+                        <h3>Notifications</h3>
                         <!--------------- NOTIFICATION POPUP --------------->
                         <div class="notifications-popup">
                             <div>
@@ -98,11 +98,15 @@
                     </a>
                     <a class="menu-item">
                         <span><i class="uil uil-bookmark"></i></span>
-                        <h3>Bookmarks</h3>
+                        <h3>Profile</h3>
                     </a>
                     <a class="menu-item">
                         <span><i class="uil uil-setting"></i></span>
-                        <h3>Setting</h3>
+                        <h3>Level</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="uil uil-setting"></i></span>
+                        <h3>Settings</h3>
                     </a>
                 </div>
                 <!----------------- END OF SIDEBAR -------------------->
@@ -128,6 +132,13 @@
                         <img src="./images/profile-1.jpg">
                     </div>
                     <input type="text" placeholder="What's on your mind, Diana ?" id="create-post">
+                    <div class="media-icon">
+                        <label for="media-upload">
+                            <i class="uil uil-image-upload" style="margin-right: 0.5rem; color: #9b6ef3;"></i>
+                        </label>
+                        <input type="file" id="media-upload" style="display: none;" accept="image/*">
+                    </div>
+                    
                     <input type="submit" value="Post" class="btn btn-primary">
                 </form>
                 <!----------------- FEEDS -------------------->
@@ -159,9 +170,6 @@
                                 <span><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
                             </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
                         </div>
 
                         <div class="liked-by">
@@ -181,17 +189,16 @@
                         </div>
                     </div>
                     <!----------------- END OF FEED 1 -------------------->
-
                     <!----------------- FEED 2 -------------------->
                     <div class="feed">
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
-                                    <img src="./images/profile-10.jpg">
+                                    <img src="./images/profile-13.jpg">
                                 </div>
                                 <div class="info">
-                                    <h3>Clara Dwayne</h3>
-                                    <small>Miami, 2 Hours Ago</small>
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 Minutes Ago</small>
                                 </div>
                             </div>
                             <span class="edit">
@@ -200,7 +207,7 @@
                         </div>
 
                         <div class="photo">
-                            <img src="./images/feed-3.jpg">
+                            <img src="./assets/images/feed-1.jpg">
                         </div>
 
                         <div class="action-buttons">
@@ -209,39 +216,35 @@
                                 <span><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
                             </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
                         </div>
 
                         <div class="liked-by">
-                            <span><img src="./images/profile-11.jpg"></span>
-                            <span><img src="./images/profile-5.jpg"></span>
-                            <span><img src="./images/profile-16.jpg"></span>
-                            <p>Liked by <b>Diana Rose</b> and <b>2, 323 others</b></p>
+                            <span><img src="./images/profile-10.jpg"></span>
+                            <span><img src="./images/profile-4.jpg"></span>
+                            <span><img src="./images/profile-15.jpg"></span>
+                            <p>Liked by <b>Ernest Achiever</b> and <b>2, 323 others</b></p>
                         </div>
 
                         <div class="caption">
-                            <p><b>Clara Dwayne</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam, fugiat? Ipsam voluptatibus beatae facere eos harum voluptas distinctio, officia, facilis sed quisquam esse, assumenda minima ut. Excepturi sit quis reiciendis! 
+                            <p><b>Lana Rose</b> Lorem ipsum dolor sit quisquam eius. 
                             <span class="harsh-tag">#lifestyle</span></p>
                         </div>
 
                         <div class="comments text-muted">
-                            View all 100 comments
+                            View all 277 comments
                         </div>
                     </div>
                     <!----------------- END OF FEED 2 -------------------->
-
                     <!----------------- FEED 3 -------------------->
                     <div class="feed">
                         <div class="head">
                             <div class="user">
                                 <div class="profile-photo">
-                                    <img src="./images/profile-4.jpg">
+                                    <img src="./images/profile-13.jpg">
                                 </div>
                                 <div class="info">
-                                    <h3>Rosalinda Clark</h3>
-                                    <small>New York, 50 Minutes Ago</small>
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 Minutes Ago</small>
                                 </div>
                             </div>
                             <span class="edit">
@@ -250,7 +253,7 @@
                         </div>
 
                         <div class="photo">
-                            <img src="./images/feed-4.jpg">
+                            <img src="./assets/images/feed-1.jpg">
                         </div>
 
                         <div class="action-buttons">
@@ -259,28 +262,73 @@
                                 <span><i class="uil uil-comment-dots"></i></span>
                                 <span><i class="uil uil-share-alt"></i></span>
                             </div>
-                            <div class="bookmark">
-                                <span><i class="uil uil-bookmark-full"></i></span>
-                            </div>
                         </div>
 
                         <div class="liked-by">
-                            <span><img src="./images/profile-12.jpg"></span>
-                            <span><img src="./images/profile-13.jpg"></span>
-                            <span><img src="./images/profile-14.jpg"></span>
-                            <p>Liked by <b>Clara Dwayne</b> and <b>2, 323 others</b></p>
+                            <span><img src="./images/profile-10.jpg"></span>
+                            <span><img src="./images/profile-4.jpg"></span>
+                            <span><img src="./images/profile-15.jpg"></span>
+                            <p>Liked by <b>Ernest Achiever</b> and <b>2, 323 others</b></p>
                         </div>
 
                         <div class="caption">
-                            <p><b>Rosalinda Clark</b> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quo ullam, quam voluptatibus natus ex corporis ea atque quisquam, necessitatibus, cumque eligendi aliquam nulla soluta hic. Obcaecati, tempore dignissimos! Esse cupiditate laborum ullam, quae necessitatibus, officiis, quaerat aspernatur illo voluptatum repellat perferendis voluptatem similique. Assumenda nostrum, eius sit laborum nesciunt deserunt!
+                            <p><b>Lana Rose</b> Lorem ipsum dolor sit quisquam eius. 
                             <span class="harsh-tag">#lifestyle</span></p>
                         </div>
 
                         <div class="comments text-muted">
-                            View all 50 comments
+                            View all 277 comments
                         </div>
                     </div>
                     <!----------------- END OF FEED 3 -------------------->
+                    <!----------------- FEED 4 -------------------->
+                    <div class="feed">
+                        <div class="head">
+                            <div class="user">
+                                <div class="profile-photo">
+                                    <img src="./images/profile-13.jpg">
+                                </div>
+                                <div class="info">
+                                    <h3>Lana Rose</h3>
+                                    <small>Dubai, 15 Minutes Ago</small>
+                                </div>
+                            </div>
+                            <span class="edit">
+                                <i class="uil uil-ellipsis-h"></i>
+                            </span>
+                        </div>
+
+                        <div class="photo">
+                            <img src="./assets/images/feed-1.jpg">
+                        </div>
+
+                        <div class="action-buttons">
+                            <div class="interaction-buttons">
+                                <span><i class="uil uil-heart"></i></span>
+                                <span><i class="uil uil-comment-dots"></i></span>
+                                <span><i class="uil uil-share-alt"></i></span>
+                            </div>
+                        </div>
+
+                        <div class="liked-by">
+                            <span><img src="./images/profile-10.jpg"></span>
+                            <span><img src="./images/profile-4.jpg"></span>
+                            <span><img src="./images/profile-15.jpg"></span>
+                            <p>Liked by <b>Ernest Achiever</b> and <b>2, 323 others</b></p>
+                        </div>
+
+                        <div class="caption">
+                            <p><b>Lana Rose</b> Lorem ipsum dolor sit quisquam eius. 
+                            <span class="harsh-tag">#lifestyle</span></p>
+                        </div>
+
+                        <div class="comments text-muted">
+                            View all 277 comments
+                        </div>
+                    </div>
+                    <!----------------- END OF FEED 4 -------------------->
+
+                    
 
                 </div>
                 <!----------------- END OF FEEDS -------------------->
@@ -293,10 +341,10 @@
                     <i class="uil uil-search"></i>
                     <input type="search" placeholder="Search ">
                 </div>
-                <!------- FRIEND REQUEST ------->
-                <div class="friend-requests">
-                    <h4>Requests</h4>
-                    <div class="request">
+                <!------- WWHO TO FOLLOW ------->
+                <div class="who-to-follow">
+                    <h4>Who to Follow</h4>
+                    <div class="follow">
                         <div class="info">
                             <div class="profile-photo">
                                 <img src="./images/profile-20.jpg">
@@ -309,13 +357,10 @@
                         <div class="action">
                             <button class="btn btn-primary">
                                 Accept
-                            </button>
-                            <button class="btn">
-                                Decline
-                            </button>
+                            </button>                            
                         </div>
                     </div>
-                    <div class="request">
+                    <div class="follow">
                         <div class="info">
                             <div class="profile-photo">
                                 <img src="./images/profile-18.jpg">
@@ -329,12 +374,9 @@
                             <button class="btn btn-primary">
                                 Accept
                             </button>
-                            <button class="btn">
-                                Decline
-                            </button>
                         </div>
                     </div>
-                    <div class="request">
+                    <div class="follow">
                         <div class="info">
                             <div class="profile-photo">
                                 <img src="./images/profile-17.jpg">
@@ -347,9 +389,6 @@
                         <div class="action">
                             <button class="btn btn-primary">
                                 Accept
-                            </button>
-                            <button class="btn">
-                                Decline
                             </button>
                         </div>
                     </div>
