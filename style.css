@@ -47,7 +47,7 @@ body {
 }
 
 .profile {
-margin-top: 10rem;    
+margin-top: 7rem;    
 }
 
 .profile-photo {
@@ -154,7 +154,6 @@ main .container .left .profile {
 
 /* =============== Sidebar ============== */
 .left .sidebar {
-    margin-top: 1rem;
     background: black;
     border-radius: var(--card-border-radius);
 }
@@ -404,12 +403,8 @@ MEDIA QUERIES FOR SMALL LAPTOP AND BIG TABLETS
     }
 
     .logo {
-        position: var(--sticky-top-right);
-        border-radius: 50%;
-    }
-
-    .logo img {
-        border-radius: 50%;
+        position: fixed;
+        border-radius: var(--border-radius);
     }
 
     .left {
@@ -453,6 +448,11 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         position: fixed;
         bottom: 0;
         right: 0;
+    }
+
+    .logo {
+        position: var(--sticky-top-right);
+        border-radius: var(--border-radius);
     }
 
     /* Notification Popup */
