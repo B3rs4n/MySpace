@@ -18,12 +18,30 @@ body {
 	align-items: center;
 	width: 80%;
 	max-width: 1200px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px; /* Elemanlar arasındaki boşluk */
 }
 .logo img {
 	width: 500px;
 	height: auto;
+	border-radius: 50%;
 }
-.square {
+.logo-back .image img {
+	border-radius: 50%;
+	border-width: 10px;
+	justify-content: right;
+}
+
+.login-back .image {
+position: absolute;
+margin-bottom: 25em;
+margin-right: 20rem;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+.login-back {
 	position: relative;
 	width: 500px;
 	height: 500px;
@@ -31,44 +49,7 @@ body {
 	justify-content: center;
 	align-items: center;
 }
-.square i {
-	position: absolute;
-	inset: 0;
-	border: 2px solid #fff;
-	transition: 0.5s;
-}
-.square i:nth-child(1) {
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 59%;
-	animation: animate 6s linear infinite;
-}
-.square i:nth-child(2) {
-	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-	animation: animate 4s linear infinite;
-}
-.square i:nth-child(3) {
-	border-radius: 41% 44% 56% 59%/38% 62% 63% 37%;
-	animation: animate2 10s linear infinite;
-}
-.square:hover i {
-	border: 6px solid var(--clr);
-	filter: drop-shadow(0 0 20px var(--clr));
-}
-@keyframes animate {
-	0% {
-		transform: rotate(0deg);
-	}
-	100% {
-		transform: rotate(360deg);
-	}
-}
-@keyframes animate2 {
-	0% {
-		transform: rotate(360deg);
-	}
-	100% {
-		transform: rotate(0deg);
-	}
-}
+
 .login {
 	position: absolute;
 	width: 300px;

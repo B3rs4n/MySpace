@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mySocial - Responsive Social Media Website Using HTML, CSS, & JavaScript</title>
+    <!-- IconScout CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <!-------------------------------- MAIN ----------------------------------->
+    <main>
+        <div class="container">
+            <!----------------- LEFT -------------------->
+            <div class="left">
+                <div class="logo">
+                    <a href="Home.html">
+                    <img  src="assets/images/logo3.png" href="https://www.google.com">
+                    </a>
+                </div>
+                <!----------------- SIDEBAR -------------------->
+                <div class="sidebar" style="margin-top: 115px;">
+                    <a class="menu-item" href="Home.html">
+                        <span><i class="bi bi-house"></i></span>
+                        <h3>Home</h3>   
+                    </a>
+                    <a class="menu-item" href="StarFall.html">
+                        <span><i class="bi bi-stars"></i></span>
+                        <h3>Starfall</h3>
+                    </a>
+                    <a class="menu-item"  id="notifications">
+                        <span><i class="bi bi-bell"><small class="notification-count">9+</small></i></span>
+                        <h3>Notifications</h3>
+                        <!--------------- NOTIFICATION POPUP --------------->
+                        <div class="notifications-popup">
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-2.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Keke Benjamin</b> accepted your friend request
+                                    <small class="text-muted">2 Days Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-3.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>John Doe</b> commented on your post
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-4.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Marry Oppong</b> and <b>283 Others</b> liked your post
+                                    <small class="text-muted">4 Minutes Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-5.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Doris Y. Lartey</b> commented on a post you are tagged in
+                                    <small class="text-muted">2 Days Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-6.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Keyley Jenner</b> commented on a post you are tagged in
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="profile-photo">
+                                    <img src="./images/profile-7.jpg">
+                                </div>
+                                <div class="notification-body">
+                                    <b>Jane Doe</b> commented on your post
+                                    <small class="text-muted">1 Hour Ago</small>
+                                </div>
+                            </div>
+                        </div>
+                        <!--------------- END NOTIFICATION POPUP --------------->
+                    </a>
+                    <a class="menu-item" href="Messages.html">
+                        <span><i class="bi bi-chat-left"><small class="notification-count">6</small></i></span>
+                        <h3>Messages</h3>
+                    </a>
+                    <a class="menu-item" href="Profile.html">
+                        <span><i class="bi bi-person"></i></span>
+                        <h3>Profile</h3>
+                    </a>
+                    <a class="menu-item active" href="Level.html">
+                        <span><i class="bi bi-rocket"></i></span>
+                        <h3>Level</h3>
+                    </a>
+                    <a class="menu-item">
+                        <span><i class="bi bi-gear"></i></span>
+                        <h3>Settings</h3>
+                    </a>
+                </div>
+                <!----------------- END OF SIDEBAR -------------------->
+                <a href="Login.html">
+                <label class="btn btn-primary" for="log out">Log Out</label>
+                </a>
+               <!----------------- PROFILE -------------------->
+                <a class="profile">
+                    <div class="profile-photo">
+                        <img src="./images/profile-1.jpg">
+                    </div>
+                    <div class="handle">
+                        <h4>Nia Ridania</h4>
+                        <p class="text-muted">
+                            @niaridania
+                        </p>
+                    </div>
+                </a>
+            </div>
+
+            <!----------------- MIDDLE -------------------->
+            <div class="middle">
+                <!-- Levels Section -->
+    <div class="levels">
+        <h2>Levels</h2>
+        <div class="level-cards">
+            <!-- Novice Astronaut -->
+            <div class="level-card">
+                <img src="assets/images/1.png" alt="Novice Astronaut">
+                <h4>Novice Astronaut</h4>
+                <p>Required Stars: <i class="bi bi-star-fill"></i> 500</p>
+                <p>Daily Stars: <i class="bi bi-star-fill"></i> 15</p>
+            </div>
+
+            <!-- Star Explorer -->
+            <div class="level-card">
+                <img src="assets/images/2.png" alt="Star Explorer">
+                <h4>Star Explorer</h4>
+                <p>Required Stars: <i class="bi bi-star-fill"></i> 1000</p>
+                <p>Daily Stars: <i class="bi bi-star-fill"></i> 30</p>
+            </div>
+
+            <!-- Galaxy Pioneer -->
+            <div class="level-card">
+                <img src="assets/images/3.png" alt="Galaxy Pioneer">
+                <h4>Galaxy Pioneer</h4>
+                <p>Required Stars: <i class="bi bi-star-fill"></i> 1500</p>
+                <p>Daily Stars: <i class="bi bi-star-fill"></i> 60</p>
+            </div>
+        </div>
+
+        <!-- Progress Bar Section -->
+        <div class="progress-container">
+            <div class="progress">
+                <div class="progress-bar" style="width: 80%;"></div>
+            </div>
+        </div>
+        <div class="daily-stars">
+            <h3>Your Stars: <i class="bi bi-star-fill"></i> 1225/1500</h3>
+            <h3>Daily Stars <i class="bi bi-star-fill"></i> 29</h3>
+        </div>
+    </div>
+           </div>
+             <!----------------- END OF MIDDLE -------------------->
+
+            <!----------------- RIGHT -------------------->
+            <div class="right">
+                <div class="search-bar">
+                    <i class="bi bi-search" style="color: grey;"></i>
+                    <input type="search" placeholder="Search ">
+                </div>
+                <!------- WWHO TO FOLLOW ------->
+                <div class="who-to-follow">
+                    <h4>Who to Follow</h4>
+                    <div class="follow">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="./images/profile-20.jpg">
+                            </div>
+                            <div>
+                                <h5>Hajia Bintu</h5>
+                                <p class="text-muted">8 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>                            
+                        </div>
+                    </div>
+                    <div class="follow">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="./images/profile-18.jpg">
+                            </div>
+                            <div>
+                                <h5>Edelson Mandela</h5>
+                                <p class="text-muted">2 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>
+                        </div>
+                    </div>
+                    <div class="follow">
+                        <div class="info">
+                            <div class="profile-photo">
+                                <img src="./images/profile-17.jpg">
+                            </div>
+                            <div>
+                                <h5>Megan Baldwin</h5>
+                                <p class="text-muted">5 mutual friends</p>
+                            </div>
+                        </div>
+                        <div class="action">
+                            <button class="btn btn-primary">
+                                Accept
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <footer>
+                        <p>&copy; 2024 MySpace.</p>
+                    </footer>
+                </div>
+            </div>
+            <!----------------- END OF RIGHT -------------------->
+        </div>
+    </main>
+    <script src = "index.js"></script>
+</body>
+</html>
