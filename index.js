@@ -7,7 +7,6 @@ const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message');
 const messageSearch = document.querySelector('#message-search');
 
-
 // ============== SIDEBAR ============== 
 
 // Remove active class from all menu items
@@ -16,6 +15,7 @@ const changeActiveItem = () => {
         item.classList.remove('active');
     })
 }
+
 
 menuItems.forEach(item => {
     item.addEventListener('click', () => {
@@ -32,6 +32,7 @@ menuItems.forEach(item => {
         }
     })
 })
+
 
 // ============== MESSAGES ============== 
 
@@ -59,3 +60,17 @@ messageNotification.addEventListener('click', () => {
         messages.style.boxShadow = 'none';
     }, 2000);
 })
+
+//========================================
+// HTML öğelerini seçiyoruz
+const messagesSection = document.getElementById("messages");
+const feedsSection = document.getElementById("feeds");
+
+// "Messages" öğesine tıklama olayını dinliyoruz
+messagesSection.addEventListener("click", () => {
+    // "Messages" öğesine 'active' sınıfı ekle
+    messagesSection.classList.add("active");
+
+    // "Feeds" öğesinden 'active' sınıfını kaldır
+    feedsSection.classList.remove("active");
+});
