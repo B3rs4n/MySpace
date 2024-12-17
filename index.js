@@ -1,3 +1,46 @@
+
+
+document.querySelectorAll('.FollowButton').forEach(button => {
+    button.addEventListener('click', function() {
+        if (this.textContent === 'Follow') {
+            this.textContent = 'Unfollow';
+            this.classList.add('btn-danger'); // Renk değişikliği için
+            this.classList.remove('btn-primary');
+        } else {
+            this.textContent = 'Follow';
+            this.classList.add('btn-primary');
+            this.classList.remove('btn-danger');
+        }
+    });
+});
+
+// Popup Menüsünü Seç
+const popupMenu = document.querySelectorAll('.popup');
+
+// Tüm "edit" butonlarını seç ve her birine tıklama olayı ekle
+document.querySelectorAll('.edit').forEach((editBtn, index) => {
+    editBtn.addEventListener('click', function(event) {
+        // Popup menüsünü aç/kapat
+        const menu = popupMenu[index];
+        menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        
+        // Popup menüsünün pozisyonunu ayarlamak (isteğe bağlı)
+        menu.style.left = `${event.clientX}px`; // Tıklama noktasına göre pozisyonlandırma
+        menu.style.top = `${event.clientY + 20}px`; // Yükseklik ayarlaması
+    });
+});
+
+// Sayfanın başka bir yerine tıklanırsa, popup menüsünü kapat
+document.addEventListener('click', function(event) {
+    if (!event.target.closest('.edit')) {
+        popupMenu.forEach(menu => {
+            menu.style.display = 'none';
+        });
+    }
+});
+
+
+
 // Sidebar
 const menuItems = document.querySelectorAll('.menu-item');
 
@@ -6,33 +49,6 @@ const messageNotification = document.querySelector('#messages-notifications');
 const messages = document.querySelector('.messages');
 const message = messages.querySelectorAll('.message');
 const messageSearch = document.querySelector('#message-search');
-
-// ============== SIDEBAR ============== 
-
-// Remove active class from all menu items
-const changeActiveItem = () => {
-    menuItems.forEach(item => {
-        item.classList.remove('active');
-    })
-}
-
-
-menuItems.forEach(item => {
-    item.addEventListener('click', () => {
-        changeActiveItem();
-        item.classList.add('active');
-        if(item.id != 'notifications') {
-            document.querySelector('.notifications-popup').
-            style.display = 'none';
-        } else {
-            document.querySelector('.notifications-popup').
-            style.display = 'block';
-            document.querySelector('#notifications .notification-count').
-            style.display = 'none';
-        }
-    })
-})
-
 
 // ============== MESSAGES ============== 
 
@@ -59,18 +75,7 @@ messageNotification.addEventListener('click', () => {
     setTimeout(() => {
         messages.style.boxShadow = 'none';
     }, 2000);
-})
-
-//========================================
-// HTML öğelerini seçiyoruz
-const messagesSection = document.getElementById("messages");
-const feedsSection = document.getElementById("feeds");
-
-// "Messages" öğesine tıklama olayını dinliyoruz
-messagesSection.addEventListener("click", () => {
-    // "Messages" öğesine 'active' sınıfı ekle
-    messagesSection.classList.add("active");
-
-    // "Feeds" öğesinden 'active' sınıfını kaldır
-    feedsSection.classList.remove("active");
 });
+
+
+

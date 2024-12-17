@@ -130,7 +130,7 @@ img {
     width: 30vw;
     margin-left: 1rem;
     font-size: 0.9rem;
-    color: var(--color-white);
+    color: var(--color-dark);
 }
 
 /* =============== Main ============== */
@@ -238,43 +238,64 @@ main .container .left .profile {
     margin-bottom: 0.7rem;
 }
 
-/* =============== Notification Popup ============== */
-.left .notifications-popup {
-    position: absolute;
-    top: 0;
-    left: 110%;
-    width: 30rem;
-    background:#181818;
-    border-radius: var(--card-border-radius);
-    padding: var(--card-padding);
-    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
-    z-index: 10;
-    display: none;
-}
 
-.left .notifications-popup::before {
-    content: "";
-    width: 1.2rem;
-    height: 1.2rem;
-    display: block;
-    background:  #181818;
-    position: absolute;
-    left: -0.6rem;
-    transform: rotate(45deg);
-}
-
-.left .notifications-popup > div {
-    display: flex;
-    align-items: start;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-.left .notifications-popup small {
-    display: block;
-}
 
 /* =============== Middle ============== */
+
+/* Üç Nokta Butonu */
+.edit {
+    cursor: pointer;
+    font-size: 24px;
+    color: #ffffff;
+    position: relative;
+}
+
+/* Popup Menüsü */
+.popup {
+    display: none;
+    position: sticky; /* Popup akıştan çıkarıldı */
+    background-color: #333333;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    border-radius: 5px;
+    width: 150px;
+    z-index: 1000; /* Popup'ı üst katmana taşı */
+    right: 30px; /* Edit butonuna göre hizalama */
+    top: 50px; /* Edit butonunun hemen altına yerleştir */
+}
+
+.popup.show {
+    display: block;
+}
+
+/* Popup Menü Öğeleri */
+.popup ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.popup ul li {
+    border-bottom: 1px solid #555;
+}
+
+.popup ul li:last-child {
+    border-bottom: none;
+}
+
+.popup ul li a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.popup ul li a:hover {
+    background-color: #555555;
+    color: #00bcd4;
+}
+
 /* =============== Create Post ============== */
 .middle .create-post {
     width: 100%;
@@ -296,12 +317,112 @@ main .container .left .profile {
     margin-right: 1rem;
 }
 
-/* =============== Messages ============== */
-.middle .messages {
-    background: var(--color-dark);
+/* ============= SETTINGS ================= */
+
+.settings-container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.settings-card {
+    background: #181818;
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
-    margin-top: var(--card-padding);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.settings-header {
+    font-size: 1.2rem;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.settings-description {
+    font-size: 0.9rem;
+    color: var(--color-grey);
+    margin-bottom: 1rem;
+}
+
+.settings-btn {
+    display: inline-block;
+    padding: 0.6rem 2rem;
+    background: var(--color-primary);
+    color: white;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    text-align: center;
+    transition: opacity 300ms ease;
+    font-size: 0.9rem;
+}
+
+.settings-btn:hover {
+    opacity: 0.8;
+}
+
+/* =============== Notifications ============== */
+.middle .notifications {
+    background: black;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.middle .notifications .heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    font-size: large;
+}
+
+.middle .notifications .notification {
+    display: flex;
+    background: #181818;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.middle .notifications .profile-photo {
+    position: relative;
+    overflow: visible;
+    z-index: -1;
+}
+
+.middle .notifications .notification:last-child {
+    margin: 0;
+}
+
+.middle .notifications .notification .notification-body {
+    font-size:0.8rem;
+    margin-left: 0.8rem;
+}
+
+.middle .notifications .notification .profile-photo .active {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    border: 3px solid var(--color-white);
+    background: var(--color-success);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* =============== Messages ============== */
+.middle .messages {
+    background: black;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .middle .messages .heading {
@@ -309,33 +430,23 @@ main .container .left .profile {
     align-items: center;
     justify-content: space-between;
     margin-bottom: 1rem;
-    font-size: larger;
-}
-
-.middle .messages i {
-    font-size: 1.4rem;
-}
-
-.middle .messages .search-bar {
-    display: flex;
-    margin-bottom: 1rem;
-}
-
-.middle .messages .search-bar input {
-    margin-right: 2rem;
-    color: var(--color-light);
+    font-size: large;
 }
 
 .middle .messages .message {
     display: flex;
-    gap: 1rem;
-    margin-bottom: 1rem;
-    align-items: start;
+    background: #181818;
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
 }
 
 .middle .message .profile-photo {
     position: relative;
     overflow: visible;
+    z-index: -1;
 }
 
 .middle .profile-photo img {
@@ -346,8 +457,9 @@ main .container .left .profile {
     margin: 0;
 }
 
-.middle .messages .message p {
+.middle .messages .message .message-body {
     font-size:0.8rem;
+    margin-left: 0.8rem;
 }
 
 .middle .messages .message .profile-photo .active {
@@ -360,6 +472,7 @@ main .container .left .profile {
     bottom: 0;
     right: 0;
 }
+
 /* =============== Feeds ============== */
 .middle .feeds .feed {
     background: #181818;
@@ -439,7 +552,7 @@ main .container .right {
 }
 
 .right .follow {
-    background: var(--color-dark);
+    background: #181818;
     padding: var(--card-padding);
     border-radius: var(--card-border-radius);
     margin-bottom: 0.7rem;
@@ -545,6 +658,7 @@ footer {
     color: #9b6ef3;
 }
 
+
 /* =============== Profile ============== */
 /* Profile Card Styling */
 .middle .profile-card {
@@ -561,11 +675,28 @@ footer {
     justify-content: space-between; /* Butonu sağa hizalar */
 }
 
+.middle .banner{
+    position: relative;
+    z-index: 1;
+    height: 15rem; 
+    object-fit: cover;
+    margin-bottom: -4rem;
+}
+
+.middle .banner img {
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .middle .profile-pic {
-    width: 4rem;
-    height: 4rem;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     overflow: hidden;
+    z-index: 2;
+    margin-left: 0.7rem;
 }
 
 .middle .profile-pic img {
@@ -582,11 +713,13 @@ footer {
 .middle .user-info h2 {
     margin: 0;
     font-size: 1.5rem; /* Kullanıcı adını daha büyük yapalım */
+    margin-left: 0.7rem;
 }
 
 .middle .user-info p {
     margin: 0.5rem 0 0;
     color: var(--color-grey);
+    margin-left: 0.7rem;
 }
 
 .middle .set-profile-btn {
@@ -597,6 +730,8 @@ footer {
     cursor: pointer;
     font-size: 0.9rem;
     transition: all 300ms ease;
+    margin-top: 4.5rem;
+    font-weight: bold;
 }
 
 .middle .set-profile-btn:hover {
@@ -699,6 +834,10 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
 ==================== */
 
 @media screen and (max-width: 992px) {
+    nav .search-bar {
+        display: none;
+    }
+
     main .container {
         grid-template-columns: 0 auto 5rem;
         gap: 0;
@@ -716,19 +855,6 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         border-radius: var(--border-radius);
     }
 
-    /* Notification Popup */
-    .left .notifications-popup { 
-        position: absolute;
-        left: -20rem;
-        width: 20rem;
-    }
-
-    .left .notifications-popup::before {
-        display: absolute;
-        top: 1.3rem;
-        left: calc(20rem - 0.6rem);
-        display: block;
-    }
 
     main .container .middle {
         grid-column: 1/3;
