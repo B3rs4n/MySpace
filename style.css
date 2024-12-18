@@ -880,7 +880,7 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
 
 /* Aktif (beğenilmiş) ikon için stil */
 .like-button i.active {
-    color: red;
+    color: yellow;
 }
 
 /* Sayaçlara stil verelim */
