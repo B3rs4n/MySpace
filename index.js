@@ -77,5 +77,41 @@ messageNotification.addEventListener('click', () => {
     }, 2000);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+    // Beğeni butonu fonksiyonu
+    window.handleLike = function (element) {
+        let countSpan = element.querySelector(".like-count");
+        let icon = element.querySelector("i");
+        let count = parseInt(countSpan.textContent.trim());
+
+        if (icon.classList.contains("active")) {
+            count--;
+            icon.classList.remove("active");
+        } else {
+            count++;
+            icon.classList.add("active");
+        }
+
+        countSpan.textContent = count;
+    };
+
+    // Yorum butonu fonksiyonu
+    window.handleComment = function (element) {
+        let countSpan = element.querySelector(".comment-count");
+        let count = parseInt(countSpan.textContent.trim());
+        count++;
+        countSpan.textContent = count;
+    };
+
+    // Paylaşım butonu fonksiyonu
+    window.handleShare = function (element) {
+        let countSpan = element.querySelector(".share-count");
+        let count = parseInt(countSpan.textContent.trim());
+        count++;
+        countSpan.textContent = count;
+        alert("Paylaşıldı!");
+    };
+});
+
 
 

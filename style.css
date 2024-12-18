@@ -864,3 +864,28 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         display: none;
     }
 }
+/* Butonlara stil verelim */
+.interaction-buttons span {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s ease-in-out;
+    color: white;
+}
+
+.interaction-buttons span:active {
+    transform: scale(1.2);
+}
+
+/* Aktif (beğenilmiş) ikon için stil */
+.like-button i.active {
+    color: red;
+}
+
+/* Sayaçlara stil verelim */
+.count {
+    margin-left: 5px;
+    font-size: 1rem;
+}
+

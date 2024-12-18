@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mySocial - Responsive Social Media Website Using HTML, CSS, & JavaScript</title>
-    <!-- IconScout CDN -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-    <!-- Stylesheet -->
-    <link rel="stylesheet" href="./style.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>mySocial - Responsive Social Media Website Using HTML, CSS, & JavaScript</title>
+        <!-- IconScout CDN -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <!-- Stylesheet -->
+        <link rel="stylesheet" href="./style.css">
+    </head>
 <body>
     <!-------------------------------- MAIN ----------------------------------->
     <main>
@@ -22,7 +22,7 @@
                     </a>
                 </div>
                 <!----------------- SIDEBAR -------------------->
-                <div class="sidebar" style="margin-top: 115px;">
+                <div class="sidebar" >
                     <a class="menu-item" href="Home.html">
                         <span><i class="bi bi-house"></i></span>
                         <h3>Home</h3>   
@@ -33,17 +33,17 @@
                     </a>
                     <a class="menu-item"  href="Notifications.html">
                         <span><i class="bi bi-bell"><small class="notification-count">4</small></i></span>
-                        <h3>Notifications</h3>
+                        <h3>Notifications</h3>                        
                     </a>
                     <a class="menu-item" href="Messages.html">
                         <span><i class="bi bi-chat-left"><small class="notification-count">6</small></i></span>
                         <h3>Messages</h3>
                     </a>
-                    <a class="menu-item" href="Profile.html">
+                    <a class="menu-item active" href="Profile.html">
                         <span><i class="bi bi-person"></i></span>
                         <h3>Profile</h3>
                     </a>
-                    <a class="menu-item active" href="Level.html">
+                    <a class="menu-item" href="Level.html">
                         <span><i class="bi bi-rocket"></i></span>
                         <h3>Level</h3>
                     </a>
@@ -72,47 +72,105 @@
 
             <!----------------- MIDDLE -------------------->
             <div class="middle">
-                <!-- Levels Section -->
-    <div class="levels">
-        <h2>Levels</h2>
-        <div class="level-cards">
-            <!-- Novice Astronaut -->
-            <div class="level-card">
-                <img src="assets/images/1.png" alt="Novice Astronaut">
-                <h4>Novice Astronaut</h4>
-                <p>Required Stars: <i class="bi bi-star-fill"></i> 500</p>
-                <p>Daily Stars: <i class="bi bi-star-fill"></i> 15</p>
+                <!-- Profile Card -->
+                <div class="profile-card">
+              
+                  <!-- Profile Banner -->
+                  <div class="banner">
+                    <img src="assets/images/feed-2.jpg" alt="Profile Banner">
+                  </div>
+              
+                  <!-- Profile Header -->
+                  <div class="profile-header">
+              
+                    <!-- Profile Picture -->
+                    <div class="profile-pic">
+                      <img src="assets/images/logo2.png" alt="Profile Picture">
+                    </div>
+              
+                    <!-- Edit Profile Button -->
+                    <button class="set-profile-btn">Edit Profile</button>
+                  </div>
+              
+                  <!-- User Info -->
+                  <div class="user-info">
+                    <h2>John Doe</h2>
+                    <p>@johndoe</p>
+                  </div>
+              
+                  <!-- Follow Info -->
+                  <div class="follow-info">
+                    <span>120 Posts</span>
+                    <span>300 Followers</span>
+                    <span>150 Following</span>
+                  </div>
+              
+                  <!-- Profile Tabs -->
+                  <div class="tabs">
+                    <ul>
+                      <a href="Profile.html" style="color: inherit; text-decoration: none;">Posts</a>
+                      <li class="selected chosen">Super Star</li>
+                    </ul>
+                  </div>                                
+              
+                </div>
+                <!----------------- FEEDS -------------------->
+<div class="feeds">
+    <!-- FEED 1 -->
+    <div class="feed">
+        <div class="head">
+            <div class="user">
+                <div class="profile-photo">
+                    <img src="./images/profile-13.jpg">
+                </div>
+                <div class="info">
+                    <h3>@lanarose</h3>
+                    <small>Dubai, 15 Minutes Ago</small>
+                </div>
             </div>
-
-            <!-- Star Explorer -->
-            <div class="level-card">
-                <img src="assets/images/2.png" alt="Star Explorer">
-                <h4>Star Explorer</h4>
-                <p>Required Stars: <i class="bi bi-star-fill"></i> 1000</p>
-                <p>Daily Stars: <i class="bi bi-star-fill"></i> 30</p>
+            <!-- Popup Kutusu -->
+            <div class="popup">
+                <ul>
+                    <li><a href="#">Block User</a></li>
+                    <li><a href="#">Report User</a></li>
+                    <li><a href="Profile.html">View Profile</a></li>
+                </ul>
             </div>
-
-            <!-- Galaxy Pioneer -->
-            <div class="level-card">
-                <img src="assets/images/3.png" alt="Galaxy Pioneer">
-                <h4>Galaxy Pioneer</h4>
-                <p>Required Stars: <i class="bi bi-star-fill"></i> 1500</p>
-                <p>Daily Stars: <i class="bi bi-star-fill"></i> 60</p>
-            </div>
+            <span class="edit">
+                <i class="bi bi-three-dots"></i>
+            </span>
         </div>
-
-        <!-- Progress Bar Section -->
-        <div class="progress-container">
-            <div class="progress">
-                <div class="progress-bar" style="width: 80%;"></div>
-            </div>
+        <div class="photo">
+            <img src="./assets/images/feed-1.jpg">
         </div>
-        <div class="daily-stars">
-            <h3>Your Stars: <i class="bi bi-star-fill"></i> 1225/1500</h3>
-            <h3>Daily Stars <i class="bi bi-star-fill"></i> 29</h3>
+        <div class="action-buttons">
+            <div class="interaction-buttons">
+                <span class="like-button" onclick="handleLike(this)"><i class="bi bi-star"></i><span class="like-count"> 0</span></span>
+                <span class="comment-button" onclick="handleComment(this)"><i class="bi bi-chat"></i><span class="comment-count"> 0</span></span>
+                <span class="share-button" onclick="handleShare(this)"><i class="bi bi-stars"></i><span class="share-count"> 0</span></span>
+            </div>
+        </div>  
+        <div class="liked-by">
+            <span><img src="./images/profile-10.jpg"></span>
+            <span><img src="./images/profile-4.jpg"></span>
+            <span><img src="./images/profile-15.jpg"></span>
+            <p>Liked by <b>@ernest</b> and <b>2, 323 others</b></p>
+        </div>
+        <div class="caption">
+            <p><b>@lanarose</b> Lorem ipsum dolor sit quisquam eius. 
+                <span class="harsh-tag">#lifestyle</span>
+            </p>
+        </div>
+        <div class="comments text-muted">
+            View all 277 comments
         </div>
     </div>
-           </div>
+    <!-- END OF FEED 1 -->
+</div>
+
+<!----------------- END OF FEEDS -------------------->                
+              </div>
+              
              <!----------------- END OF MIDDLE -------------------->
 
             <!----------------- RIGHT -------------------->
