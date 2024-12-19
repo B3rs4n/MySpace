@@ -1,0 +1,81 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+a.button.cancel:link{
+    color: white;
+}
+
+a.button.cancel:visited {
+    color: white;   
+    text-decoration: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #3c2454;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: black;
+}
+
+.container {
+    background-color: #6b4de6;
+    border-radius: 10px;
+    padding: 30px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container img {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+.container h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.container p {
+    font-size: 0.9rem;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.button.logout {
+    background-color: #fff;
+    color: #3c2454;
+    font-weight: bold;
+}
+
+.button.logout:hover {
+    background-color: #eee;
+}
+
+.button.cancel {
+    background-color: #000;
+    color: #fff;
+}
+
+.button.cancel:hover {
+    background-color: #333;
+}
