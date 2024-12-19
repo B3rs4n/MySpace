@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     // Beğeni butonu fonksiyonu
-    window.handleLike = function (element) {
-        let countSpan = element.querySelector(".like-count");
+    window.handleStar = function (element) {
+        let countSpan = element.querySelector(".star-count");
         let icon = element.querySelector("i");
         let count = parseInt(countSpan.textContent.trim());
 

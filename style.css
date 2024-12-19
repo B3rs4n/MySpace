@@ -297,7 +297,7 @@ main .container .left .profile {
 
 .popup ul li a:hover {
     background-color: #555555;
-    color: #00bcd4;
+    color: #fe019a;
 }
 
 /* =============== Create Post ============== */
@@ -396,7 +396,6 @@ main .container .left .profile {
 .middle .notifications .profile-photo {
     position: relative;
     overflow: visible;
-    z-index: -1;
 }
 
 .middle .notifications .notification:last-child {
@@ -450,7 +449,6 @@ main .container .left .profile {
 .middle .message .profile-photo {
     position: relative;
     overflow: visible;
-    z-index: -1;
 }
 
 .middle .profile-photo img {
@@ -515,11 +513,11 @@ main .container .left .profile {
    margin-right: 4px;
 }
 
-.middle .liked-by {
+.middle .stared-by {
     display: flex;
 }
 
-.middle .liked-by span {
+.middle .stared-by span {
     width: 1.4rem;
     height: 1.4rem;
     display: block;
@@ -529,11 +527,11 @@ main .container .left .profile {
     margin-left: -0.6rem;
 }
 
-.middle .liked-by span:first-child {
+.middle .stared-by span:first-child {
     margin: 0;
 }
 
-.middle .liked-by p {
+.middle .stared-by p {
     margin-left: 0.5rem;
 }
 
@@ -847,6 +845,34 @@ footer {
     background: black;
     color: white;
   }
+
+.interaction-buttons span {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: transform 0.2s ease-in-out;
+    color: white;
+}
+
+.interaction-buttons span:active {
+    transform: scale(1.2);
+}
+
+/* Aktif (beğenilmiş) ikon için stil */
+.star-button i.active {
+    color: #ffe135;
+}
+
+.share-button i.active {
+    color: #fe019a;
+}
+
+/* Sayaçlara stil verelim */
+.count {
+    margin-left: 5px;
+    font-size: 1rem;
+}
 /* ================= 
 MEDIA QUERIES FOR SMALL LAPTOP AND BIG TABLETS 
 ==================== */
@@ -923,32 +949,3 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         display: none;
     }
 }
-/* Butonlara stil verelim */
-.interaction-buttons span {
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    transition: transform 0.2s ease-in-out;
-    color: white;
-}
-
-.interaction-buttons span:active {
-    transform: scale(1.2);
-}
-
-/* Aktif (beğenilmiş) ikon için stil */
-.like-button i.active {
-    color: #ffe135;
-}
-
-.share-button i.active {
-    color: #fe019a;
-}
-
-/* Sayaçlara stil verelim */
-.count {
-    margin-left: 5px;
-    font-size: 1rem;
-}
-

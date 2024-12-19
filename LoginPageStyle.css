@@ -79,7 +79,7 @@ z-index: -1;
 .login .inputBx input[type="submit"] {
 	width: 100%;
 	background: #0078ff;
-	background: linear-gradient(45deg, #9b6ef3, #f172ff);
+	background: linear-gradient(45deg, #9b6ef3, #fe019a);
 	border: none;
 	cursor: pointer;
 }
