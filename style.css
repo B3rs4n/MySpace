@@ -622,11 +622,11 @@ footer {
 }
 
 .level-card i {
-   color: yellow;
+   color: #ffe135;
 }
 
 .daily-stars i{
-    color: yellow;
+    color: #ffe135;
 }
 
 .progress-container {
@@ -634,7 +634,7 @@ footer {
 }
 
 .progress-container i {
-    color: yellow;
+    color: #ffe135;
 }
 
 .progress {
@@ -880,7 +880,11 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
 
 /* Aktif (beğenilmiş) ikon için stil */
 .like-button i.active {
-    color: yellow;
+    color: #ffe135;
+}
+
+.share-button i.active {
+    color: #fe019a;
 }
 
 /* Sayaçlara stil verelim */
