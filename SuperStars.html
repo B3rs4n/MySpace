@@ -89,9 +89,40 @@
                       <img src="assets/images/profile-13.png" alt="Profile Picture">
                     </div>
               
-                    <!-- Edit Profile Button -->
-                    <button class="set-profile-btn">Edit Profile</button>
-                  </div>
+                <!-- Edit Profile Button -->
+                <button id="set-profile-btn">Edit Profile</button>
+                <!-- Profile Picture Popup -->
+              </div>
+
+<!-- Modal Overlay -->
+<div class="modal-overlay" id="modal-overlay"></div>
+
+<!-- Modal -->
+<div class="modal" id="profile-modal">
+<img src="assets/images/logo2.png" alt="Profile Icon" class="modal-logo">
+
+<!-- Başlangıçtaki kutu, profil fotoğrafını seçme -->
+<div class="modal-content" id="profile-photo-content">
+    <h2>Choose profile photo</h2>
+    <button class="photo-select">
+        <img src="assets/images/user-icon.png" alt="User Icon">
+    </button>
+</div>
+
+<!-- Sonraki adım, profil banner'ını seçme -->
+<div class="modal-content" id="profile-banner-content" style="display: none;">
+    <h2>Choose profile banner</h2>
+    <button class="photo-select">
+        <img src="assets/images/banner-icon.png" alt="Banner Icon">
+    </button>
+</div>
+
+<div class="modal-buttons">
+    <button class="next">Next</button>
+    <button class="skip">Skip</button>
+    <button class="cancel">Cancel</button>
+</div>
+</div>
               
                   <!-- User Info -->
                   <div class="user-info">
@@ -337,7 +368,7 @@
                             </div>
                             <div>
                                 <h5>@hajia</h5>
-                                <p class="text-muted">Novice Astroner</p>
+                                <p class="text-lvl">Novice Astroner</p>
                             </div>
                         </div>
                         <div class="action">
@@ -351,7 +382,7 @@
                             </div>
                             <div>
                                 <h5>@edelson</h5>
-                                <p class="text-muted">Star Explorer</p>
+                                <p class="text-lvl">Star Explorer</p>
                             </div>
                         </div>
                         <div class="action">
@@ -365,7 +396,7 @@
                             </div>
                             <div>
                                 <h5>@megan</h5>
-                                <p class="text-muted">Galaxy Pioneer</p>
+                                <p class="text-lvl">Galaxy Pioneer</p>
                             </div>
                         </div>
                         <div class="action">
@@ -383,6 +414,7 @@
             <!----------------- END OF RIGHT -------------------->
         </div>
     </main>
-    <script src = "index.js"></script>
+    <script src = "interaction.js"></script>
+    <script src = "edit_profile.js"></script>
 </body>
 </html>
