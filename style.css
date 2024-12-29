@@ -991,6 +991,25 @@ footer {
     transform: scale(1.05);
 }
 
+/* Biyografi ekleme metin kutusu */
+#add-bio-content textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px #ccc;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    resize: none;
+    margin-top: 20px;
+}
+
+#add-bio-content textarea:focus {
+    outline: none;
+    border-color: #6a4ce1;
+    box-shadow: 0 0 5px rgba(106, 76, 225, 0.5);
+}
+
 /* Alt Butonlar (En alt, büyük ve aralıklı) */
 .modal-buttons {
     display: flex;
@@ -1054,6 +1073,7 @@ footer {
 .modal-buttons .finish:hover {
     background: #3aa32c;
 }
+
 /* ================= 
 MEDIA QUERIES FOR SMALL LAPTOP AND BIG TABLETS 
 ==================== */
