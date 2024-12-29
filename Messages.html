@@ -57,63 +57,97 @@
                     <label class="btn btn-primary" style="background: linear-gradient(45deg, #9b6ef3, #fe019a);" for="log out">Log Out</label>
                 </a>
              <!----------------- PROFILE -------------------->
-             <a class="profile">
+             <a class="profile" href="Profile.html">
                 <div class="profile-photo">
-                    <img src="assets/images/profile-13.png">
+                    <img src="assets/images/profile-13.png" alt="Profile Photo">
                 </div>
                 <div class="profile-card">
                     <div class="username">@username</div>
                     <div class="text-lvl">Star Explorer</div>
                     <div class="daily-stars" style="margin-top: 0.4rem;">
-                      Daily Stars: <i class="bi bi-star-fill"></i> 29
+                        Daily Stars: <i class="bi bi-star-fill"></i> 29
                     </div>
-                  </div>
+                </div>
             </a>
             </div>
 
+            <!----------------- MIDDLE -------------------->
             <div class="middle">
                 <!----------------- MESSAGES -------------------->
-                <div class="messages-container">
-                    <div class="sidebar">
-                        <!-- Konuşma listesi -->
-                        <div class="conversation" onclick="openChat('John')">
-                            <img src="https://via.placeholder.com/40" alt="John">
-                            <span>John</span>
+                <div class="messages">
+                    <div class="heading">
+                        <h4>Messages</h4>
+                    </div>
+                     <!------- SEARCH BAR ------->
+                     <div class="search-bar">
+                        <i class="bi bi-search" style="margin-left: 1.5rem ;"></i>
+                        <input type="search" placeholder="Search messages" id="message-search">
+                    </div>
+                    <!------- MESSAGES 1------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
                         </div>
-                        <div class="conversation" onclick="openChat('Jane')">
-                            <img src="https://via.placeholder.com/40" alt="Jane">
-                            <span>Jane</span>
-                        </div>
-                        <div class="conversation" onclick="openChat('Mike')">
-                            <img src="https://via.placeholder.com/40" alt="Mike">
-                            <span>Mike</span>
+                        <div class="message-body">
+                            <h5>@edem</h5>
+                            <p class="text-muted">text</p>
                         </div>
                     </div>
-                    <div class="middle">
-                        <!-- Konuşma başlığı -->
-                        <div class="chat-header">
-                            <button class="back-button" onclick="goBack()">Back</button>
-                            <span id="chat-header-title">Select a conversation</span>
+                    <!------- MESSAGES 2------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
                         </div>
-                        <!-- Mesajlaşma alanı -->
-                        <div class="chat-messages" id="chat-messages">
-                            <!-- Gönderilen mesaj -->
-                            <div class="message sent">
-                                <div class="bubble"></div>
-                            </div>
-                            <!-- Alınan mesaj -->
-                            <div class="message received">
-                                <div class="bubble"></div>
-                            </div>
-                            <!-- Daha fazla mesaj -->
-                        </div>
-                        <!-- Mesaj yazma alanı -->
-                        <div class="chat-input">
-                            <input type="text" id="chat-input" placeholder="Type a message..." disabled>
-                            <button onclick="sendMessage()">▶</button>
+                        <div class="message-body">
+                            <h5>@daniella</h5>
+                            <p class="text-bold">text</p>
                         </div>
                     </div>
+                    <!------- MESSAGES 3------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>@chantel</h5>
+                            <p class="text-muted">text</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES 4------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
+                        </div>
+                        <div class="message-body">
+                            <h5>@juliet</h5>
+                            <p class="text-muted">text</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES 5------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
+                            <div class="active"></div>
+                        </div>
+                        <div class="message-body">
+                            <h5>@kylie</h5>
+                            <p class="text-bold">text</p>
+                        </div>
+                    </div>
+                    <!------- MESSAGES 6------->
+                    <div class="message">
+                        <div class="profile-photo">
+                            <img src="assets/images/profile-13.png">
+                        </div>
+                        <div class="message-body">
+                            <h5>@benjamin</h5>
+                            <p class="text-muted">text</p>
+                        </div>
+                    </div>
+                    
                 </div>
+                <!----------------- END OF FEEDS -------------------->
             </div>
              <!----------------- END OF MIDDLE -------------------->
 
@@ -177,6 +211,5 @@
     </main>
     <script src = "interaction.js"></script>
     <script src="search_messages.js"></script>
-    <script src="type-text-message.js"></script>
 </body>
 </html>

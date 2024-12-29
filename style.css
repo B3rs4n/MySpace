@@ -134,7 +134,7 @@ img {
     width: 30vw;
     margin-left: 1rem;
     font-size: 0.9rem;
-    color: var(--color-dark);
+    color: white;
 }
 
 /* =============== Main ============== */
@@ -164,7 +164,19 @@ main .container .left .profile {
     align-items: center;
     column-gap: 1rem;
     width: 100%;
+    text-decoration: none; /* Link alt çizgisi kaldırıldı */
+    color: inherit; /* Metin rengini korumak için */
+    transition: background-color 0.3s ease; /* Hover geçiş efekti */
 }
+
+main .container .left .profile:hover {
+    background-color: #2c2c2c; /* Koyu gri arka plan */
+}
+
+main .container .left .profile:active {
+    background-color: #1a1a1a; /* Daha koyu bir arka plan (isteğe bağlı) */
+}
+
 
 /* =============== Sidebar ============== */
 .left .sidebar {
@@ -929,10 +941,34 @@ footer {
     margin-top: 20px;
 }
 
+.photo-select1 {
+    width: 200px; /* Dikdörtgen genişlik */
+    height: 200px; /* Dikdörtgen yükseklik */
+    background: #f0f0f0;
+    border-radius: 100px;
+    border: 4px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto 40px; /* Üst ve alt boşluk ayarlandı */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+/* Profil fotoğrafı seçim butonu */
+.photo-select1 img {
+    width: 60px; /* Daha küçük resim */
+    height: 60px;
+}
+
+.photo-select1:hover {
+    transform: scale(1.05);
+}
 /* "Choose Profile Banner" Butonu */
-.photo-select {
-    width: 250px; /* Dikdörtgen genişlik */
-    height: 100px; /* Dikdörtgen yükseklik */
+.photo-select2 {
+    width: 500px; /* Dikdörtgen genişlik */
+    height: 180px; /* Dikdörtgen yükseklik */
     background: #f0f0f0;
     border-radius: 10px;
     border: 4px solid white;
@@ -946,13 +982,32 @@ footer {
 }
 
 /* Profil fotoğrafı seçim butonu */
-.photo-select img {
+.photo-select2 img {
     width: 60px; /* Daha küçük resim */
     height: 60px;
 }
 
-.photo-select:hover {
+.photo-select2:hover {
     transform: scale(1.05);
+}
+
+/* Biyografi ekleme metin kutusu */
+#add-bio-content textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    border: 1px #ccc;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    resize: none;
+    margin-top: 20px;
+}
+
+#add-bio-content textarea:focus {
+    outline: none;
+    border-color: #6a4ce1;
+    box-shadow: 0 0 5px rgba(106, 76, 225, 0.5);
 }
 
 /* Alt Butonlar (En alt, büyük ve aralıklı) */
@@ -975,12 +1030,12 @@ footer {
 }
 
 .modal-buttons .next {
-    background: #4CAF50;
-    color: white;
+    background: #f0f0f0;
+    color: black;
 }
 
 .modal-buttons .next:hover {
-    background: #45a049;
+    background: #dcdcdc;
 }
 
 .modal-buttons .skip {
@@ -1001,133 +1056,22 @@ footer {
     background: #e03126;
 }
 
-/* MESSAGES */
-.messages-container {
-    display: flex;
-    height: 100%;
+.modal-buttons .back {
+    background: #f0f0f0;
+    color: black;
 }
 
-.messages-container .sidebar {
-    width: 25%;
-    background-color: #1c1c1c;
-    border-right: 1px solid #333;
-    overflow-y: auto;
+.modal-buttons .back:hover {
+    background: #dcdcdc;
 }
 
-.messages-container .sidebar .conversation {
-    padding: 10px;
-    cursor: pointer;
-    border-bottom: 1px solid #333;
-    display: flex;
-    align-items: center;
-}
-
-.messages-container .sidebar .conversation:hover {
-    background-color: #2a2a2a;
-}
-
-.messages-container .sidebar .conversation img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 10px;
-}
-
-.messages-container .middle {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.chat-header {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    background-color: var(--color-dark);
+.modal-buttons .finish {
+    background: #3dd429;
     color: white;
 }
 
-.chat-header .back-button {
-    margin-right: 10px;
-    background-color: var(--color-primary);
-    border: none;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-.chat-messages {
-    flex: 1;
-    padding: 10px;
-    overflow-y: auto;
-    background-color: #121212;
-}
-
-.chat-messages .message {
-    margin-bottom: 10px;
-    display: flex;
-}
-
-.chat-messages .message.sent {
-    justify-content: flex-end; /* Sağ tarafa hizala */
-}
-
-.chat-messages .message.received {
-    justify-content: flex-start; /* Sol tarafa hizala */
-}
-
-.chat-messages .message .bubble {
-    max-width: 60%;
-    padding: 10px;
-    border-radius: 15px;
-    position: relative;
-    color: white;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-.chat-messages .message.sent .bubble {
-    background: linear-gradient(45deg, #9b6ef3, #fe019a);
-    border-top-right-radius: 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    color: white;
-}
-
-.chat-messages .message.received .bubble {
-    background: linear-gradient(45deg, #2c2c2c, #555555);
-    border-top-left-radius: 0;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
-    color: white;
-    border: 1px solid #666;
-}
-
-.chat-input {
-    display: flex;
-    padding: 10px;
-    background-color: #1c1c1c;
-    border-top: 1px solid #333;
-}
-
-.chat-input input {
-    flex: 1;
-    padding: 10px;
-    border: 1px solid #555;
-    border-radius: 5px;
-    margin-right: 10px;
-    background-color: #2a2a2a;
-    color: white;
-}
-
-.chat-input button {
-    background-color: var(--color-primary);
-    color: white;
-    border: none;
-    padding: 10px;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+.modal-buttons .finish:hover {
+    background: #3aa32c;
 }
 
 /* ================= 
