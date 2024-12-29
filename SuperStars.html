@@ -98,35 +98,38 @@
 <div class="modal-overlay" id="modal-overlay"></div>
 
 <!-- Modal -->
-<div class="modal" id="profile-modal">
-<img src="assets/images/logo2.png" alt="Profile Icon" class="modal-logo">
+<div class="modal" id="profile-modal">          
+    <img src="assets/images/logo2.png" alt="Profile Icon" class="modal-logo">
+    
+    <!-- Başlangıçtaki kutu, profil fotoğrafını seçme -->
+    <div class="modal-content" id="profile-photo-content">
+        <h2>Choose profile photo</h2>
+        <button class="photo-select1">
+            <img src="assets/images/user-icon.png" alt="User Icon">
+        </button>
+    </div>
+                                         
+    <!-- İkinci adım, profil banner'ını seçme -->
+    <div class="modal-content" id="profile-banner-content" style="display: none;">
+        <h2>Choose profile banner</h2>
+        <button class="photo-select2">
+            <img src="assets/images/banner-icon.png" alt="Banner Icon">
+        </button>
+    </div>
 
-<!-- Başlangıçtaki kutu, profil fotoğrafını seçme -->
-<div class="modal-content" id="profile-photo-content">
-    <h2>Choose profile photo</h2>
-    <button class="photo-select1">
-        <img src="assets/images/user-icon.png" alt="User Icon">
-    </button>
-</div>
+    <!-- Üçüncü adım, bio ekleme -->
+    <div class="modal-content" id="add-bio-content" style="display: none;">
+        <h2>Add Bio</h2>
+        <textarea id="bio-input" placeholder="Write about you" ></textarea>
+    </div>
 
-<!-- Sonraki adım, profil banner'ını seçme -->
-<div class="modal-content" id="profile-banner-content" style="display: none;">
-    <h2>Choose profile banner</h2>
-    <button class="photo-select2">
-        <img src="assets/images/banner-icon.png" alt="Banner Icon">
-    </button>
-</div>
-
-<div class="modal-buttons">
-    <!-- Birinci adım butonları -->      
-    <button class="cancel">Cancel</button>
-    <button class="skip">Skip</button>
-    <button class="next">Next</button>
-
-    <!-- İkinci adım butonları -->
-    <button class="back" style="display: none;">Back</button>
-    <button class="finish" style="display: none;">Finish</button>
-</div>
+    <div class="modal-buttons">
+        <button class="cancel">Cancel</button>
+        <button class="back" style="display: none;">Back</button>
+        <button class="skip">Skip</button>
+        <button class="next">Next</button>        
+        <button class="finish" style="display: none;">Finish</button>
+    </div>
 </div>
               
                   <!-- User Info -->
@@ -140,6 +143,11 @@
                     <span>120 Posts</span>
                     <span>300 Followers</span>
                     <span>150 Following</span>
+                  </div>
+
+                  <!-- Bio'nun gösterileceği alan -->
+                  <div id="bio-display" style="margin-top: 20px; font-size: 15px; color: #ffffff;">
+                     
                   </div>
               
                   <!-- Profile Tabs -->
