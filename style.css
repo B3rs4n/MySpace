@@ -1074,6 +1074,135 @@ footer {
     background: #3aa32c;
 }
 
+/* MESSAGES */
+.messages-container {
+    display: flex;
+    height: 100%;
+}
+
+.messages-container .sidebar {
+    width: 25%;
+    background-color: #1c1c1c;
+    border-right: 1px solid #333;
+    overflow-y: auto;
+}
+
+.messages-container .sidebar .conversation {
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid #333;
+    display: flex;
+    align-items: center;
+}
+
+.messages-container .sidebar .conversation:hover {
+    background-color: #2a2a2a;
+}
+
+.messages-container .sidebar .conversation img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.messages-container .middle {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.chat-header {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: var(--color-dark);
+    color: white;
+}
+
+.chat-header .back-button {
+    margin-right: 10px;
+    background-color: var(--color-primary);
+    border: none;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-messages {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+    background-color: #121212;
+}
+
+.chat-messages .message {
+    margin-bottom: 10px;
+    display: flex;
+}
+
+.chat-messages .message.sent {
+    justify-content: flex-end; /* Sağ tarafa hizala */
+}
+
+.chat-messages .message.received {
+    justify-content: flex-start; /* Sol tarafa hizala */
+}
+
+.chat-messages .message .bubble {
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 15px;
+    position: relative;
+    color: white;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.chat-messages .message.sent .bubble {
+    background: linear-gradient(45deg, #9b6ef3, #fe019a);
+    border-top-right-radius: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.chat-messages .message.received .bubble {
+    background: linear-gradient(45deg, #2c2c2c, #555555);
+    border-top-left-radius: 0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: white;
+    border: 1px solid #666;
+}
+
+.chat-input {
+    display: flex;
+    padding: 10px;
+    background-color: #1c1c1c;
+    border-top: 1px solid #333;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: #2a2a2a;
+    color: white;
+}
+
+.chat-input button {
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
 /* ================= 
 MEDIA QUERIES FOR SMALL LAPTOP AND BIG TABLETS 
 ==================== */
