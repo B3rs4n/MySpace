@@ -11,6 +11,15 @@ const finishBtn = document.querySelector('.finish');
 // Modal'ın içerik kutuları
 const profilePhotoContent = document.getElementById('profile-photo-content');
 const profileBannerContent = document.getElementById('profile-banner-content');
+const addBioContent = document.getElementById('add-bio-content');
+const bioInput = document.getElementById('bio-input');
+
+// Bio'nun ekleneceği hedef eleman
+const bioDisplay = document.getElementById('bio-display');
+
+// Adımları takip etmek için değişken
+let currentStep = 0;
+const steps = [profilePhotoContent, profileBannerContent, addBioContent];
 
 // "Edit Profile" butonuna tıklanırsa modal'ı göster
 editProfileBtn.addEventListener('click', () => {
@@ -23,29 +32,36 @@ editProfileBtn.addEventListener('click', () => {
 cancelBtn.forEach(btn => btn.addEventListener('click', closeModal));
 modalOverlay.addEventListener('click', closeModal);
 
-// "Next" butonuna tıklanırsa ikinci adıma geç ve butonları değiştir
-nextBtn.addEventListener('click', () => {
-    profilePhotoContent.style.display = 'none'; // Profil fotoğrafı kutusunu gizle
-    profileBannerContent.style.display = 'block'; // Banner kutusunu göster
-    toggleButtons();
-});
+// "Next" ve "Skip" butonlarına tıklanırsa bir sonraki adıma geç
+[nextBtn, skipBtn].forEach(btn => btn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
+        steps[currentStep].style.display = 'none';
+        currentStep++;
+        steps[currentStep].style.display = 'block';
+        updateButtons();
+    }
+}));
 
-// "Skip" butonuna tıklanırsa da ikinci adıma geç ve butonları değiştir
-skipBtn.addEventListener('click', () => {
-    profilePhotoContent.style.display = 'none'; // Profil fotoğrafı kutusunu gizle
-    profileBannerContent.style.display = 'block'; // Banner kutusunu göster
-    toggleButtons();
-});
-
-// "Back" butonuna tıklanırsa birinci adıma geri dön ve butonları değiştir
+// "Back" butonuna tıklanırsa bir önceki adıma dön
 backBtn.addEventListener('click', () => {
-    profilePhotoContent.style.display = 'block'; // Profil fotoğrafı kutusunu göster
-    profileBannerContent.style.display = 'none'; // Banner kutusunu gizle
-    toggleButtons();
+    if (currentStep > 0) {
+        steps[currentStep].style.display = 'none';
+        currentStep--;
+        steps[currentStep].style.display = 'block';
+        updateButtons();
+    }
 });
 
-// "Finish" butonuna tıklanırsa modal'ı kapat
-finishBtn.addEventListener('click', closeModal);
+// "Finish" butonuna tıklanırsa bio metnini sayfaya ekle ve modal'ı kapat
+finishBtn.addEventListener('click', () => {
+    const bioText = bioInput.value.trim(); // Bio metnini al
+    if (bioText) {
+        bioDisplay.textContent = bioText; // Bio metnini hedef elemana ekle
+    } else {
+        bioDisplay.textContent = 'No bio added.'; // Boşsa varsayılan bir metin ekle
+    }
+    closeModal();
+});
 
 // Modal'ı kapatma fonksiyonu
 function closeModal() {
@@ -53,21 +69,19 @@ function closeModal() {
     modalOverlay.style.display = 'none'; // Arka plan karartmayı kapat
 }
 
-// Modal'ı başlangıç durumuna döndürme fonksiyonu
+// Modal'ı başlangıç durumuna döndürme faonksiyonu
 function resetModal() {
-    profilePhotoContent.style.display = 'block'; // Profil fotoğrafı kutusunu göster
-    profileBannerContent.style.display = 'none'; // Banner kutusunu gizle
-    nextBtn.style.display = 'inline-block';
-    skipBtn.style.display = 'inline-block';
-    backBtn.style.display = 'none';
-    finishBtn.style.display = 'none';
+    steps.forEach((step, index) => {
+        step.style.display = index === 0 ? 'block' : 'none';
+    });
+    currentStep = 0;
+    updateButtons();
 }
 
-// Butonları adımlara göre değiştir
-function toggleButtons() {
-    const isSecondStep = profileBannerContent.style.display === 'block';
-    nextBtn.style.display = isSecondStep ? 'none' : 'inline-block';
-    skipBtn.style.display = isSecondStep ? 'none' : 'inline-block';
-    backBtn.style.display = isSecondStep ? 'inline-block' : 'none';
-    finishBtn.style.display = isSecondStep ? 'inline-block' : 'none';
+// Butonları adımlara göre güncelle
+function updateButtons() {
+    backBtn.style.display = currentStep > 0 ? 'inline-block' : 'none';
+    nextBtn.style.display = currentStep < steps.length - 1 ? 'inline-block' : 'none';
+    skipBtn.style.display = currentStep < steps.length - 1 ? 'inline-block' : 'none';
+    finishBtn.style.display = currentStep === steps.length - 1 ? 'inline-block' : 'none';
 }
