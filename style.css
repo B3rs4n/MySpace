@@ -1082,12 +1082,13 @@ footer {
 
 .messages-container .sidebar {
     width: 25%;
-    background-color: #1c1c1c;
+    background-color: var(--color-black);
     border-right: 1px solid #333;
     overflow-y: auto;
 }
 
 .messages-container .sidebar .conversation {
+    margin-top: 0.5rem;
     padding: 10px;
     cursor: pointer;
     border-bottom: 1px solid #333;
@@ -1096,7 +1097,7 @@ footer {
 }
 
 .messages-container .sidebar .conversation:hover {
-    background-color: #2a2a2a;
+    background-color: #332345;
 }
 
 .messages-container .sidebar .conversation img {
@@ -1120,21 +1121,15 @@ footer {
     color: white;
 }
 
-.chat-header .back-button {
-    margin-right: 10px;
-    background-color: var(--color-primary);
-    border: none;
-    padding: 5px 10px;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.chat-header span {
+    margin-left: 0.5rem;
 }
 
 .chat-messages {
     flex: 1;
     padding: 10px;
     overflow-y: auto;
-    background-color: #121212;
+    background-color: var(--color-black);
 }
 
 .chat-messages .message {
@@ -1178,7 +1173,7 @@ footer {
 .chat-input {
     display: flex;
     padding: 10px;
-    background-color: #1c1c1c;
+    background-color: var(--color-black);
     border-top: 1px solid #333;
 }
 
@@ -1188,7 +1183,7 @@ footer {
     border: 1px solid #555;
     border-radius: 5px;
     margin-right: 10px;
-    background-color: #2a2a2a;
+    background-color: #2c1937;
     color: white;
 }
 

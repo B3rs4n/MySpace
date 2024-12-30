@@ -1,21 +1,20 @@
-// Messages 
-const messageNotification = document.querySelector('#messages-notifications');
-const messages = document.querySelector('.messages');
-const message = messages.querySelectorAll('.message');
-const messageSearch = document.querySelector('#message-search');
+// Mesajlaşma bileşenlerini seç
+const messageSearch = document.querySelector('#message-search'); // Arama çubuğu
+const conversations = document.querySelectorAll('.conversation'); // Tüm kişi öğelerini seç
 
-//Searches messages
+// Arama işlevi
 const searchMessage = () => {
-    const val = messageSearch.value.toLowerCase();
-    message.forEach(user => {
-        let name = user.querySelector('h5').textContent.toLowerCase();
-        if(name.indexOf(val) != -1) {
-            user.style.display = 'flex'; 
+    const searchValue = messageSearch.value.toLowerCase(); // Kullanıcının arama girişini küçük harfe çevir
+    conversations.forEach(conversation => {
+        const name = conversation.querySelector('span').textContent.toLowerCase(); // Kişi adını al
+        if (name.includes(searchValue)) {
+            conversation.style.display = 'flex'; // Eşleşirse göster
         } else {
-            user.style.display = 'none';
+            conversation.style.display = 'none'; // Eşleşmezse gizle
         }
-    })
-}
+    });
+};
 
-//Search for messages
+// Arama çubuğu giriş olayını dinle
+messageSearch.addEventListener('keyup', searchMessage);
 messageSearch.addEventListener('keyup', searchMessage);

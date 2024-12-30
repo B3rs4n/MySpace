@@ -75,6 +75,11 @@
                 <!----------------- MESSAGES -------------------->
                 <div class="messages-container">
                     <div class="sidebar">
+                             <!------- SEARCH BAR ------->
+                     <div class="search-bar">
+                        <i class="bi bi-search"></i>
+                        <input type="search" placeholder="Search messages" id="message-search">
+                    </div>
                         <!-- Konuşma listesi -->
                         <div class="conversation" onclick="openChat('John')">
                             <img src="https://via.placeholder.com/40" alt="John">
@@ -92,7 +97,7 @@
                     <div class="middle">
                         <!-- Konuşma başlığı -->
                         <div class="chat-header">
-                            <button class="back-button" onclick="goBack()">Back</button>
+                            <button class="back-button btn btn-primary" onclick="goBack()">Back</button>
                             <span id="chat-header-title">Select a conversation</span>
                         </div>
                         <!-- Mesajlaşma alanı -->
