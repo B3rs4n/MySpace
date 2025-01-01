@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mySocial - Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <style>
+        /* Genel Stil */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f7fc;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 260px;
+    background-color: #3b4149;
+    color: #fff;
+    height: 100vh;
+    padding: 30px 10px;
+    position: fixed;
+}
+
+.sidebar-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.sidebar h2 {
+    font-size: 22px;
+    color: #fff;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    margin: 20px 0;
+}
+
+ul li a {
+    color: #ddd;
+    text-decoration: none;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+    transition: all 0.3s;
+}
+
+ul li a:hover, ul li.active a {
+    background-color: #9b6ef3;
+    color: white;
+    border-radius: 5px;
+}
+
+ul li a i {
+    margin-right: 10px;
+    font-size: 20px;
+}
+
+.content {
+    margin-left: 260px;
+    width: calc(100% - 260px);
+    padding: 30px;
+    overflow-y: auto;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+.header-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-info .user-info {
+    display: flex;
+    align-items: center;
+}
+
+.profile-img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+section {
+    display: none;
+}
+
+section.active-content {
+    display: block;
+}
+
+.dashboard p, .users p, .settings p {
+    font-size: 16px;
+    color: #555;
+}
+
+.dashboard, .users, .settings {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Duyarlı Tasarım */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h2>Admin Panel</h2>
+            </div>
+            <ul>
+                <li class="active"><a href="#" id="dashboard"><i class="fas fa-tachometer-alt"></i> Dashboard</a></li>
+                <li><a href="#" id="users"><i class="fas fa-users"></i> Kullanıcılar</a></li>
+                <li><a href="#" id="settings"><i class="fas fa-cogs"></i> Ayarlar</a></li>
+                <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Çıkış</a></li>
+            </ul>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="content">
+            <header>
+                <div class="header-info">
+                    <h1>Dashboard</h1>
+                    <div class="user-info">
+                        <img src="assets/images/profile.jpg" alt="Profile" class="profile-img">
+                        <span>Hoşgeldiniz, Admin</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard -->
+            <section class="dashboard" id="dashboard-content">
+                <p>Panelin özet bilgileri ve grafiklerin bulunduğu alan.</p>
+            </section>
+
+            <!-- Users -->
+            <section class="users" id="users-content">
+                <h3>Kullanıcılar</h3>
+                <p>Kullanıcılar listelenecek.</p>
+            </section>
+
+            <!-- Settings -->
+            <section class="settings" id="settings-content">
+                <h3>Ayarlar</h3>
+                <p>Ayarların yapılacağı bölüm.</p>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("dashboard").addEventListener("click", function() {
+    displayContent("dashboard-content");
+});
+document.getElementById("users").addEventListener("click", function() {
+    displayContent("users-content");
+});
+document.getElementById("settings").addEventListener("click", function() {
+    displayContent("settings-content");
+});
+document.getElementById("logout").addEventListener("click", function() {
+    alert("Çıkış yapılacak!");
+});
+
+function displayContent(contentId) {
+    // Tüm içerik bölümlerini gizle
+    const allContents = document.querySelectorAll(".dashboard, .users, .settings");
+    allContents.forEach(function(content) {
+        content.classList.remove("active-content");
+    });
+
+    // İlgili içeriği göster
+    document.getElementById(contentId).classList.add("active-content");
+
+    // Sidebar'daki aktifliği değiştirelim
+    const allMenuItems = document.querySelectorAll(".sidebar ul li");
+    allMenuItems.forEach(function(item) {
+        item.classList.remove("active");
+    });
+    const activeItem = document.querySelector(`[href="#${contentId}"]`).parentElement;
+    activeItem.classList.add("active");
+}
+
+    </script>
+</body>
+</html>
