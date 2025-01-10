@@ -316,21 +316,69 @@ main .container .left .profile:active {
 .middle .create-post {
     width: 100%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+    align-items: center; /* İçerikler dikey olarak ortalanır */
     justify-content: space-between;
     margin-top: 1rem;
     background: #181818;
-    padding: 0.4rem var(--card-padding);
+    padding: 1rem var(--card-padding); /* Alan genişletildi */
     border-radius: var(--border-radius);
+    position: relative;
+    padding-bottom: 3.5rem; /* Alt kısma çizgi ve butonlar için yer açıldı */
 }
 
 .middle .create-post input[type="text"] {
-    width: 100%;
-    justify-self: start;
+    flex: 1;
     padding-left: 1rem;
     background: transparent;
     color: white;
-    margin-right: 1rem;
+    margin-bottom: 0; /* Dikey hizalama için margin kaldırıldı */
+    border: none;
+    font-size: 1rem;
+    line-height: 1.2; /* Yazı boyutu ile uyumlu hale getirildi */
+}
+
+.middle .create-post input[type="text"]:focus {
+    outline: none;
+}
+
+.middle .create-post .profile-photo {
+    display: flex;
+    align-items: center; /* Profil fotoğrafını ortalamak için */
+    margin-right: 0.5rem;
+}
+
+.middle .create-post .gallery-button {
+    position: absolute;
+    bottom: 0.5rem; /* Çizgiye uygun konum */
+    left: var(--card-padding); /* Sol alt köşeye hizalama */
+    background: none;
+    border: none;
+    color: #6c5ce7; /* btn-primary butonunun rengiyle eşleştirildi */
+    cursor: pointer;
+    font-size: 1rem; /* Daha küçük boyut */
+    display: flex;
+    align-items: center; /* Dikey hizalama */
+    justify-content: center;
+    height: 1.5rem; /* Post butonuyla uyumlu görünüm için */
+    width: 1.5rem; /* Daire şeklinde bir ikon kutusu için */
+}
+
+.middle .create-post input[type="submit"] {
+    position: absolute;
+    bottom: 0.5rem; /* Çizgiye uygun konum */
+    right: var(--card-padding); /* Sağ alt köşeye hizalama */
+    /* Mevcut stili korur */
+}
+
+.middle .create-post::after {
+    content: '';
+    position: absolute;
+    bottom: 3rem; /* Çizgi daha aşağıda */
+    left: var(--card-padding);
+    right: var(--card-padding);
+    height: 1px;
+    background: #444; /* Çizgi rengi */
 }
 
 /* ============= SETTINGS ================= */
@@ -617,6 +665,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
     width: 150px;
+    margin-bottom: 5rem;
 }
 
 .level-card img {
@@ -1274,3 +1323,151 @@ MEDIA QUERIES FOR SMALL TABLETS AND MOBILE PHONES
         display: none;
     }
 }
+
+.back-btn {
+    position: absolute; /* Konumlandırmayı mutlak yapıyoruz */
+    top: 20px; /* Üstten 20px mesafe */
+    left: 20px; /* Soldan 20px mesafe */
+    background-color: #9b6ef3;
+    color: white;
+    font-size: 18px;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.back-btn:hover {
+    background-color: #9b6ef3;
+    transform: scale(1.1);
+}
+
+.back-btn:focus {
+    outline: none;
+}
+
+.back-btn:active {
+    transform: scale(1);
+}
+
+/* Yorum yazma alanı */
+.add-comment {
+    display: flex;
+    align-items: center; /* Profil fotoğrafı ve input alanını hizalar */
+    background-color: #fff; /* Beyaz arka plan */
+    border-radius: 10px; /* Köşeleri yuvarlak yapıyoruz */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+    padding: 10px 15px;
+    max-width: 500px;
+    width: 100%;
+    margin: 20px auto; /* Ortalar ve üstten aşağıya yerleştirir */
+}
+
+.profile-photo {
+    flex-shrink: 0; /* Fotoğraf boyutunun değişmemesini sağlar */
+    margin-right: 15px; /* Profil fotoğrafıyla input arasına boşluk ekler */
+}
+
+.profile-photo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.comment-input {
+    flex-grow: 1; /* Input'un genişlemesine olanak tanır */
+    border: 1px solid #ddd;
+    border-radius: 25px;
+    padding: 10px 15px;
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.comment-input::placeholder {
+    color: #888;
+}
+
+.comment-input:focus {
+    border-color: #9b6ef3; /* Focus olduğunda yeşil renkle vurgular */
+}
+
+.post-btn {
+    background-color: #9b6ef3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-left: 10px;
+}
+
+.post-btn:hover {
+    background-color: #9b6ef3;
+    transform: scale(1.05); /* Hoverda butonu büyütür */
+}
+
+.post-btn:focus {
+    outline: none;
+}
+
+.post-btn:active {
+    transform: scale(1);
+}
+
+/* Popup genel tasarımı */
+.profile-popup {
+    display: none; /* Başlangıçta gizli */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .popup-content {
+    background: #6a4ce1;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    width: 300px;
+  }
+  
+  .popup-logo {
+    width: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .profile-photo-preview img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 20px 0;
+    border: 2px solid white;
+  }
+  
+  .popup-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .popup-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background: white;
+    color: #333;
+  }
