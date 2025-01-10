@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700&display=swap');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+body {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	background: #000000;
+}
+.container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+	max-width: 1200px;
+	grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+	gap: 10px; 
+}
+.logo img {
+	width: 500px;
+	height: auto;
+	border-radius: 50%;
+}
+.logo-back .image img {
+	border-radius: 50%;
+	border-width: 10px;
+	justify-content: right;
+}
+
+.login-back .image {
+position: absolute;
+margin-bottom: 25em;
+margin-right: 20rem;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+
+.login-back {
+	position: relative;
+	width: 500px;
+	height: 500px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login {
+	position: absolute;
+	width: 300px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 20px;
+}
+.login .inputBx {
+	position: relative;
+	width: 100%;
+}
+.login .inputBx input {
+	position: relative;
+	width: 100%;
+	padding: 12px 20px;
+	background: transparent;
+	border: 2px solid #fff;
+	border-radius: 40px;
+	font-size: 1.2em;
+	color: #fff;
+	box-shadow: none;
+	outline: none;
+}
+.login .inputBx input[type="submit"] {
+	width: 100%;
+	background: #0078ff;
+	background: linear-gradient(45deg, #9b6ef3, #fe019a);
+	border: none;
+	cursor: pointer;
+}
+.login .inputBx input::placeholder {
+	color: rgba(255, 255, 255, 0.75);
+}
+.login .links {
+	position: relative;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0 20px;
+}
+.login .links a {
+	color: #fff;
+	text-decoration: none;
+}
