@@ -3,6 +3,29 @@ document.getElementById('gallery-button').addEventListener('click', function() {
     document.getElementById('post-image').click();
 });
 
+// Resim seçildiğinde, seçilen resmin önizlemesini göster
+document.getElementById('post-image').addEventListener('change', function() {
+    const file = this.files[0]; // Seçilen dosya
+    const previewContainer = document.getElementById('image-preview'); // Önizleme alanı
+
+    if (file) {
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+            // Önizleme için img elementini oluştur
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.classList.add('image-preview'); // Opsiyonel: Stil ekleyebilirsiniz
+
+            // Önceki önizleme varsa sil
+            previewContainer.innerHTML = '';
+            previewContainer.appendChild(img);
+        };
+
+        reader.readAsDataURL(file);
+    }
+});
+
 // Post butonuna tıklanınca post'u oluştur
 document.getElementById('post-button').addEventListener('click', function(event) {
     event.preventDefault(); // Formun gönderilmesini engelle
@@ -59,7 +82,7 @@ document.getElementById('post-button').addEventListener('click', function(event)
     const actionButtons = document.createElement('div');
     actionButtons.classList.add('action-buttons');
 
-    // Bu sınıfları, mevcut feed'deki sınıflar ile uyumlu olacak şekilde kullan
+    // Bu sınıfları, mevcut feed'deki sınıflar ile uyumlu olacak şekilde kullanalım.
     const interactionButtons = document.createElement('div');
     interactionButtons.classList.add('interaction-buttons');
 
@@ -111,4 +134,7 @@ document.getElementById('post-button').addEventListener('click', function(event)
 
     // Formu sıfırla
     document.getElementById('create-post-form').reset();
+
+    // Önizlemeyi temizle
+    document.getElementById('image-preview').innerHTML = '';
 });
